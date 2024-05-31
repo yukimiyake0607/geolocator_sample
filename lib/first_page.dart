@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:geolocator_sample/current_time.dart';
 
 class FirstPage extends StatefulWidget {
   const FirstPage({super.key});
@@ -16,7 +17,7 @@ class _FirstPageState extends State<FirstPage> {
       ),
       body: const Column(
         children: [
-          Text('現在時刻'),
+          CurrentTime(),
           Text('天気'),
           Text('湿度'),
           Text('風速'),
