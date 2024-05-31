@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:geolocator_sample/first_page.dart';
+import 'package:geolocator_sample/screens/first_page.dart';
 
 void main() {
   runApp(const MyApp());

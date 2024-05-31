@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'current_time.dart';
+import '../services/current_time.dart';
 
 class CurrentPage extends StatefulWidget {
   const CurrentPage({super.key});

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:geolocator_sample/search_location.dart';
+import 'package:geolocator_sample/screens/search_location.dart';
 import 'current_page.dart';
 
 
