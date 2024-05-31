@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:geolocator_sample/current_time.dart';
+import 'package:geolocator_sample/search_location.dart';
+import 'current_page.dart';
+
 
 class FirstPage extends StatefulWidget {
   const FirstPage({super.key});
@@ -9,39 +11,52 @@ class FirstPage extends StatefulWidget {
 }
 
 class _FirstPageState extends State<FirstPage> {
+  int _selectedScreen = 0;
+
+  List<Widget> screens = [
+    CurrentPage(),
+    SearchLocation(),
+  ];
+
+  void _ontap(index) {
+    setState(() {
+      _selectedScreen = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('TOKYO'),
       ),
-      body: const Column(
-        children: [
-          CurrentTime(),
-          Text('天気'),
-          Text('湿度'),
-          Text('風速'),
-          Text('風向き'),
-          Text('気温'),
-        ],
+      body: IndexedStack(
+        index: _selectedScreen,
+        children: screens,
       ),
-      bottomNavigationBar:
-          BottomNavigationBar(items: const <BottomNavigationBarItem>[
-        BottomNavigationBarItem(
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
             icon: Icon(
               Icons.location_on,
               color: Colors.black,
               size: 40,
             ),
-            label: ''),
-        BottomNavigationBarItem(
-            icon: Icon(
-              Icons.search,
-              color: Colors.black,
-              size: 40,
-            ),
-            label: ''),
-      ]),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.search,
+                color: Colors.black,
+                size: 40,
+              ),
+              label: ''),
+        ],
+        currentIndex: 0,
+        onTap: _ontap,
+      ),
     );
   }
 }
+
+
