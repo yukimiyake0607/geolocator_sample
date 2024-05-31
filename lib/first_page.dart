@@ -9,7 +9,7 @@ class FirstPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('TOKYO'),
       ),
-      body: Column(
+      body: const Column(
         children: [
           Text('天気'),
           Text('湿度'),
