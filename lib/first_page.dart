@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 
-class FirstPage extends StatelessWidget {
+class FirstPage extends StatefulWidget {
   const FirstPage({super.key});
 
+  @override
+  State<FirstPage> createState() => _FirstPageState();
+}
+
+class _FirstPageState extends State<FirstPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -11,6 +16,7 @@ class FirstPage extends StatelessWidget {
       ),
       body: const Column(
         children: [
+          Text('現在時刻'),
           Text('天気'),
           Text('湿度'),
           Text('風速'),
