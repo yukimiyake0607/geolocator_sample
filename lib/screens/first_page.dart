@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:geolocator_sample/screens/search_location.dart';
 import 'current_page.dart';
 
-
 class FirstPage extends StatefulWidget {
   const FirstPage({super.key});
 
@@ -27,19 +26,36 @@ class _FirstPageState extends State<FirstPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true, // AppBarを背景の上に配置
+      extendBody: true, // BottomNavigationBarを背景の上に配置
       appBar: AppBar(
-        title: const Text('TOKYO'),
+        title: const Text('TOKYO',
+        style: TextStyle(color: Colors.white),),
+        backgroundColor: Colors.transparent, // AppBarを透明に
       ),
-      body: IndexedStack(
-        index: _selectedScreen,
-        children: screens,
+      body: Stack(
+        children: [
+          Positioned.fill(
+            child: Image.asset(
+              'images/weather_background.jpg',
+              fit: BoxFit.cover,
+            ),
+          ),
+          SafeArea(
+            child: IndexedStack(
+              index: _selectedScreen,
+              children: screens,
+            ),
+          ),
+        ],
       ),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.transparent, // BottomNavigationBarを透明に
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(
               Icons.location_on,
-              color: Colors.black,
+              color: Colors.white,
               size: 40,
             ),
             label: '',
@@ -47,16 +63,14 @@ class _FirstPageState extends State<FirstPage> {
           BottomNavigationBarItem(
               icon: Icon(
                 Icons.search,
-                color: Colors.black,
+                color: Colors.white,
                 size: 40,
               ),
               label: ''),
         ],
-        currentIndex: 0,
+        currentIndex: _selectedScreen,
         onTap: _ontap,
       ),
     );
   }
 }
-
-
