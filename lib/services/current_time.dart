@@ -45,7 +45,7 @@ class _CurrentTimeState extends State<CurrentTime> {
   Widget build(BuildContext context) {
     return Text(
       _timeString,
-      style: const TextStyle(fontSize: 48),
+      style: const TextStyle(fontSize: 48, color: Colors.white),
     );
   }
 }
