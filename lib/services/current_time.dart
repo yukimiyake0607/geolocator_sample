@@ -14,7 +14,7 @@ class _CurrentTimeState extends State<CurrentTime> {
   late Timer _timer;
 
   String formatDateTime(DateTime dateTime) {
-    return "${dateTime.hour.toString().padLeft(2, '0')}:${dateTime.minute.toString().padLeft(2, '0')}:${dateTime.second.toString().padLeft(2, '0')}";
+    return "${dateTime.hour.toString().padLeft(2, '0')}:${dateTime.minute.toString().padLeft(2, '0')}";
   }
 
   @override
@@ -22,7 +22,7 @@ class _CurrentTimeState extends State<CurrentTime> {
     // TODO: implement initState
     super.initState();
     _timeString = formatDateTime(DateTime.now());
-    _timer = Timer.periodic(const Duration(seconds: 1), (Timer timer) {
+    _timer = Timer.periodic(const Duration(minutes: 1), (Timer timer) {
       _getTime();
     });
   }
