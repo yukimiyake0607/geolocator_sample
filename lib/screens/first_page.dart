@@ -29,8 +29,10 @@ class _FirstPageState extends State<FirstPage> {
       extendBodyBehindAppBar: true, // AppBarを背景の上に配置
       extendBody: true, // BottomNavigationBarを背景の上に配置
       appBar: AppBar(
-        title: const Text('TOKYO',
-        style: TextStyle(color: Colors.white),),
+        title: const Text(
+          'TOKYO',
+          style: TextStyle(color: Colors.white),
+        ),
         backgroundColor: Colors.transparent, // AppBarを透明に
       ),
       body: Stack(
