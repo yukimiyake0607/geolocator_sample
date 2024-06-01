@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import '../services/current_time.dart';
+import 'package:weather_icons/weather_icons.dart';
 
 class CurrentPage extends StatefulWidget {
   const CurrentPage({super.key});
@@ -16,6 +18,11 @@ class _CurrentPageState extends State<CurrentPage> {
         Align(
           alignment: Alignment.center,
           child: CurrentTime(),
+        ),
+        Icon(
+          WeatherIcons.day_sunny,
+          size: 50,
+          color: Colors.yellow,
         ),
         Text('天気'),
         Text('湿度'),
