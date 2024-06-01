@@ -13,7 +13,10 @@ class _CurrentPageState extends State<CurrentPage> {
   Widget build(BuildContext context) {
     return const Column(
       children: [
-        CurrentTime(),
+        Align(
+          alignment: Alignment.center,
+          child: CurrentTime(),
+        ),
         Text('天気'),
         Text('湿度'),
         Text('風速'),
