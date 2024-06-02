@@ -68,8 +68,12 @@ class _CurrentPageState extends State<CurrentPage> {
                     style: TextStyle(fontSize: 50, color: Colors.white),
                   ),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text('最高:20℃'),
+                      SizedBox(
+                        width: 10,
+                      ),
                       Text('最低:10℃'),
                     ],
                   ),
