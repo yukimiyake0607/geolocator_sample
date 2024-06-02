@@ -32,7 +32,6 @@ class _CurrentPageState extends State<CurrentPage> {
                           '快晴',
                           style: TextStyle(
                               fontSize: 18,
-                              color: Colors.white,
                               fontWeight: FontWeight.bold),
                         ),
                         Padding(
@@ -50,7 +49,7 @@ class _CurrentPageState extends State<CurrentPage> {
                             Text(
                               '時点',
                               style:
-                                  TextStyle(color: Colors.white, fontSize: 16),
+                                  TextStyle(fontSize: 16),
                             ),
                           ],
                         ),
@@ -65,7 +64,7 @@ class _CurrentPageState extends State<CurrentPage> {
                 children: [
                   Text(
                     '16℃',
-                    style: TextStyle(fontSize: 50, color: Colors.white),
+                    style: TextStyle(fontSize: 50),
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
