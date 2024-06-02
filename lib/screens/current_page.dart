@@ -62,35 +62,26 @@ class _CurrentPageState extends State<CurrentPage> {
                 ],
               ),
             ),
+            Expanded(
+              child: Column(
+                children: [
+                  Text('気温'),
+                  Row(
+                    children: [
+                      Text('最高気温'),
+                      Text('最低気温'),
+                    ],
+                  ),
+                ],
+              ),
+            ),
           ],
-        ),
-        Padding(
-          padding: EdgeInsets.all(16.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Icon(
-                  WeatherIcons.day_sunny,
-                  size: 90,
-                  color: Colors.yellow,
-                ),
-              ),
-              Text(
-                '快晴',
-                style: TextStyle(
-                    fontSize: 18,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold),
-              ),
-            ],
-          ),
         ),
         Text('湿度'),
         Text('風速'),
         Text('風向き'),
-        Text('気温'),
+        Text('日の出'),
+        Text('日の入り'),
       ],
     );
   }
