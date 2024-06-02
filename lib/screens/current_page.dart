@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import '../services/current_time.dart';
@@ -25,16 +27,7 @@ class _CurrentPageState extends State<CurrentPage> {
                   Padding(
                     padding: EdgeInsets.all(16.0),
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Icon(
-                            WeatherIcons.day_sunny,
-                            size: 90,
-                            color: Colors.yellow,
-                          ),
-                        ),
                         Text(
                           '快晴',
                           style: TextStyle(
@@ -42,17 +35,22 @@ class _CurrentPageState extends State<CurrentPage> {
                               color: Colors.white,
                               fontWeight: FontWeight.bold),
                         ),
+                        Padding(
+                          padding: EdgeInsets.all(16.0),
+                          child: Icon(
+                            WeatherIcons.day_sunny,
+                            size: 90,
+                            color: Colors.yellow,
+                          ),
+                        ),
                         Row(
-                          crossAxisAlignment: CrossAxisAlignment.end,
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             CurrentTime(),
-                            Padding(
-                              padding: EdgeInsets.only(bottom: 10.0),
-                              child: Text(
-                                '時点',
-                                style: TextStyle(
-                                    color: Colors.white, fontSize: 16),
-                              ),
+                            Text(
+                              '時点',
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 16),
                             ),
                           ],
                         ),
@@ -65,11 +63,14 @@ class _CurrentPageState extends State<CurrentPage> {
             Expanded(
               child: Column(
                 children: [
-                  Text('気温'),
+                  Text(
+                    '16℃',
+                    style: TextStyle(fontSize: 50, color: Colors.white),
+                  ),
                   Row(
                     children: [
-                      Text('最高気温'),
-                      Text('最低気温'),
+                      Text('最高:20℃'),
+                      Text('最低:10℃'),
                     ],
                   ),
                 ],
