@@ -118,6 +118,7 @@ class _CurrentPageState extends State<CurrentPage> {
         Text('風向き'),
         Text('日の出'),
         Text('日の入り'),
+        Text('体感温度'),
       ],
     );
   }
