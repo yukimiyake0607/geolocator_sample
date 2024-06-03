@@ -1,7 +1,4 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import '../services/current_time.dart';
 import 'package:weather_icons/weather_icons.dart';
 
