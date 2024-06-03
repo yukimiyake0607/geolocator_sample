@@ -79,6 +79,40 @@ class _CurrentPageState extends State<CurrentPage> {
             ),
           ],
         ),
+        Expanded(
+            child: GridView.count(
+          crossAxisCount: 2,
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.grey.withOpacity(0.7),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Column(),
+            ),
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.grey,
+                borderRadius: BorderRadius.circular(10),
+              ),
+            ),
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.grey,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Column(),
+            ),
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.grey,
+                borderRadius: BorderRadius.circular(10),
+              ),
+            ),
+          ],
+        )),
         Text('湿度'),
         Text('風速'),
         Text('風向き'),
