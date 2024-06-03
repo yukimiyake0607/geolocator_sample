@@ -15,10 +15,10 @@ class CurrentPage extends StatefulWidget {
 class _CurrentPageState extends State<CurrentPage> {
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Row(
+        const Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Expanded(
@@ -31,8 +31,7 @@ class _CurrentPageState extends State<CurrentPage> {
                         Text(
                           '快晴',
                           style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold),
+                              fontSize: 18, fontWeight: FontWeight.bold),
                         ),
                         Padding(
                           padding: EdgeInsets.all(16.0),
@@ -48,8 +47,7 @@ class _CurrentPageState extends State<CurrentPage> {
                             CurrentTime(),
                             Text(
                               '時点',
-                              style:
-                                  TextStyle(fontSize: 16),
+                              style: TextStyle(fontSize: 16),
                             ),
                           ],
                         ),
