@@ -86,11 +86,26 @@ class _CurrentPageState extends State<CurrentPage> {
           mainAxisSpacing: 10,
           children: [
             Container(
+              padding: EdgeInsets.all(16.0),
               decoration: BoxDecoration(
                 color: Colors.grey.withOpacity(0.7),
                 borderRadius: BorderRadius.circular(10),
               ),
-              child: const Column(),
+              child: const Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    '湿度',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    '90%',
+                    style: TextStyle(fontSize: 40),
+                  ),
+                  Spacer(),
+                  Text('湿度は高めです'),
+                ],
+              ),
             ),
             Container(
               decoration: BoxDecoration(
