@@ -113,12 +113,16 @@ class _CurrentPageState extends State<CurrentPage> {
             ),
           ],
         )),
-        Text('湿度'),
-        Text('風速'),
-        Text('風向き'),
-        Text('日の出'),
-        Text('日の入り'),
-        Text('体感温度'),
+        Row(
+          children: [
+            Text('湿度'),
+            Text('風速'),
+            Text('風向き'),
+            Text('日の出'),
+            Text('日の入り'),
+            Text('体感温度'),
+          ],
+        ),
       ],
     );
   }
