@@ -16,6 +16,9 @@ class FirstPage extends StatefulWidget {
 class _FirstPageState extends State<FirstPage> {
   int _selectedScreen = 0;
   String cityName = '';
+  double temperture = 0;
+  double highTemperture = 0;
+  double lowTemperture = 0;
 
   List<Widget> screens = [
     CurrentPage(),
@@ -38,7 +41,13 @@ class _FirstPageState extends State<FirstPage> {
   void updateUI(dynamic weatherData) {
     if (weatherData == null) {
       cityName = 'ERROR';
+      temperture = 0;
+      return;
     }
+    cityName = weatherData['name'];
+    temperture = weatherData['main']['temp'];
+    highTemperture = weatherData['main']['temp_max'];
+    lowTemperture = weatherData['main']['temp_min'];
   }
 
   @override
@@ -67,10 +76,10 @@ class _FirstPageState extends State<FirstPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  const Row(
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Expanded(
+                      const Expanded(
                         child: Column(
                           children: [
                             Padding(
@@ -111,17 +120,17 @@ class _FirstPageState extends State<FirstPage> {
                         child: Column(
                           children: [
                             Text(
-                              '16℃',
+                              '${temperture.toInt().toString()}℃',
                               style: TextStyle(fontSize: 50),
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Text('最高:20℃'),
+                                Text('${highTemperture.toInt().toString()}℃'),
                                 SizedBox(
                                   width: 10,
                                 ),
-                                Text('最低:10℃'),
+                                Text('${lowTemperture.toInt().toString()}℃'),
                               ],
                             ),
                           ],
