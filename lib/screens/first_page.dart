@@ -126,11 +126,12 @@ class _FirstPageState extends State<FirstPage> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Text('${highTemperture.toInt().toString()}℃'),
+                                Text(
+                                    '最高:${highTemperture.toInt().toString()}℃'),
                                 SizedBox(
                                   width: 10,
                                 ),
-                                Text('${lowTemperture.toInt().toString()}℃'),
+                                Text('最低:${lowTemperture.toInt().toString()}℃'),
                               ],
                             ),
                           ],
