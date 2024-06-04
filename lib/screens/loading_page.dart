@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:geolocator/geolocator.dart';
 import 'package:geolocator_sample/screens/first_page.dart';
-import 'package:geolocator_sample/services/current_location.dart';
 import 'package:geolocator_sample/services/weather.dart';
 
 class LoadingPage extends StatefulWidget {

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:geolocator_sample/screens/first_page.dart';
 import 'package:geolocator_sample/screens/loading_page.dart';
 
 void main() {
