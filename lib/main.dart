@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:geolocator_sample/screens/first_page.dart';
+import 'package:geolocator_sample/screens/loading_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: FirstPage(),
+      home: LoadingPage(),
       theme: ThemeData(
         primarySwatch: Colors.blue,
         textTheme: const TextTheme(
