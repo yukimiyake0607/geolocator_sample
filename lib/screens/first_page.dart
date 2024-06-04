@@ -3,7 +3,8 @@ import 'package:geolocator_sample/screens/search_location.dart';
 import 'current_page.dart';
 
 class FirstPage extends StatefulWidget {
-  const FirstPage({super.key});
+  const FirstPage({super.key, required this.weatherData});
+  final weatherData;
 
   @override
   State<FirstPage> createState() => _FirstPageState();
