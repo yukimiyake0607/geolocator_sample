@@ -89,7 +89,7 @@ class _FirstPageState extends State<FirstPage> {
                                         fontSize: 18,
                                         fontWeight: FontWeight.bold),
                                   ),
-                                  const Padding(
+                                  Padding(
                                     padding: EdgeInsets.all(16.0),
                                     child: Icon(
                                       WeatherIcons.day_sunny,
