@@ -21,6 +21,7 @@ class _FirstPageState extends State<FirstPage> {
   IconData weatherIcon = WeatherIcons.day_sunny;
   int humidity = 0;
   double sensibleTemperture = 0;
+  double windSpeed = 0;
 
   @override
   void initState() {
@@ -39,6 +40,7 @@ class _FirstPageState extends State<FirstPage> {
       weatherIcon = WeatherIcons.alien;
       humidity = 0;
       sensibleTemperture = 0;
+      windSpeed = 0;
       return;
     }
     WeatherModel weather = WeatherModel();
@@ -50,6 +52,7 @@ class _FirstPageState extends State<FirstPage> {
     weatherIcon = weather.getWeatherIcon(weatherData['weather'][0]['id']);
     humidity = weatherData['main']['humidity'];
     sensibleTemperture = weatherData['main']['feels_like'];
+    windSpeed = weatherData['wind']['speed'];
   }
 
   @override
@@ -163,7 +166,7 @@ class _FirstPageState extends State<FirstPage> {
                             parameter: '℃'),
                         BuildWeatherInfo(
                             title: '風速',
-                            value: 5,
+                            value: windSpeed.toInt(),
                             description: '時折少し強い風が吹きます',
                             parameter: 'm/s'),
                         BuildWeatherInfo(
