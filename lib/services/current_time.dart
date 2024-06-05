@@ -21,10 +21,7 @@ class _CurrentTimeState extends State<CurrentTime> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    _timeString = formatDateTime(DateTime.now());
-    _timer = Timer.periodic(const Duration(minutes: 1), (Timer timer) {
-      _getTime();
-    });
+    _getTime();
   }
 
   void _getTime() {
