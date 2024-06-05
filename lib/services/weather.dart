@@ -1,5 +1,7 @@
+import 'package:flutter/material.dart';
 import 'package:geolocator_sample/services/current_location.dart';
 import 'package:geolocator_sample/services/network_helper.dart';
+import 'package:weather_icons/weather_icons.dart';
 
 String apiKey = 'faca477592cf21c0f3627e68fc1fd1b0';
 
@@ -34,6 +36,28 @@ class WeatherModel {
       return '雷雨';
     } else {
       return 'error';
+    }
+  }
+
+  IconData getWeatherIcon(int id) {
+    if (id == 800) {
+      return WeatherIcons.day_sunny;
+    } else if (id >= 801) {
+      return WeatherIcons.day_cloudy;
+    } else if (id >= 803) {
+      return WeatherIcons.cloudy;
+    } else if (id >= 600) {
+      return WeatherIcons.snow;
+    } else if (id >= 500) {
+      return WeatherIcons.day_rain;
+    } else if (id >= 503) {
+      return WeatherIcons.rain_wind;
+    } else if (id >= 300) {
+      return WeatherIcons.showers;
+    } else if (id >= 200) {
+      return WeatherIcons.day_thunderstorm;
+    } else {
+      return WeatherIcons.alien;
     }
   }
 }
