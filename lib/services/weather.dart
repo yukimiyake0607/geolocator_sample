@@ -21,7 +21,7 @@ class WeatherModel {
     if (id == 800) {
       return '快晴';
     } else if (id >= 801) {
-      return '晴れ';
+      return '曇りのち晴れ';
     } else if (id >= 803) {
       return '曇り';
     } else if (id >= 600) {
