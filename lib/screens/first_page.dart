@@ -54,6 +54,7 @@ class _FirstPageState extends State<FirstPage> {
           style: TextStyle(color: Colors.white),
         ),
         backgroundColor: Colors.transparent, // AppBarを透明に
+        automaticallyImplyLeading: false,
       ),
       body: Stack(
         children: [
