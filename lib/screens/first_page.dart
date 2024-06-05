@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:geolocator_sample/screens/search_location.dart';
+import 'package:geolocator_sample/services/weather.dart';
 import 'package:weather_icons/weather_icons.dart';
 import '../services/build_weather_info.dart';
 import '../services/current_time.dart';
-import 'current_page.dart';
 
 class FirstPage extends StatefulWidget {
   const FirstPage({super.key, required this.weatherData});
@@ -14,22 +13,11 @@ class FirstPage extends StatefulWidget {
 }
 
 class _FirstPageState extends State<FirstPage> {
-  int _selectedScreen = 0;
   String cityName = '';
   double temperture = 0;
   double highTemperture = 0;
   double lowTemperture = 0;
-
-  List<Widget> screens = [
-    CurrentPage(),
-    SearchLocation(),
-  ];
-
-  void _ontap(index) {
-    setState(() {
-      _selectedScreen = index;
-    });
-  }
+  String weatherName = '';
 
   @override
   void initState() {
