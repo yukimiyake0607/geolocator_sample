@@ -19,6 +19,8 @@ class _FirstPageState extends State<FirstPage> {
   double lowTemperture = 0;
   String weatherName = '';
   IconData weatherIcon = WeatherIcons.day_sunny;
+  int humidity = 0;
+  double sensibleTemperture = 0;
 
   @override
   void initState() {
@@ -35,6 +37,8 @@ class _FirstPageState extends State<FirstPage> {
       lowTemperture = 0;
       weatherName = '取得できませんでした';
       weatherIcon = WeatherIcons.alien;
+      humidity = 0;
+      sensibleTemperture = 0;
       return;
     }
     WeatherModel weather = WeatherModel();
@@ -44,6 +48,8 @@ class _FirstPageState extends State<FirstPage> {
     lowTemperture = weatherData['main']['temp_min'];
     weatherName = weather.getWeatherId(weatherData['weather'][0]['id']);
     weatherIcon = weather.getWeatherIcon(weatherData['weather'][0]['id']);
+    humidity = weatherData['main']['humidity'];
+    sensibleTemperture = weatherData['main']['feels_like'];
   }
 
   @override
@@ -147,12 +153,12 @@ class _FirstPageState extends State<FirstPage> {
                       children: [
                         BuildWeatherInfo(
                             title: '湿度',
-                            value: 90,
+                            value: humidity,
                             description: '湿度は高めです',
                             parameter: '%'),
                         BuildWeatherInfo(
                             title: '体感温度',
-                            value: 18,
+                            value: sensibleTemperture.toInt(),
                             description: '半袖で過ごせます',
                             parameter: '℃'),
                         BuildWeatherInfo(
