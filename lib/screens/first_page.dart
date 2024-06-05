@@ -92,7 +92,7 @@ class _FirstPageState extends State<FirstPage> {
                                   Padding(
                                     padding: EdgeInsets.all(16.0),
                                     child: Icon(
-                                      WeatherIcons.day_sunny,
+                                      weatherIcon,
                                       size: 90,
                                       color: Colors.yellow,
                                     ),
