@@ -14,4 +14,26 @@ class WeatherModel {
     dynamic weatherData = await networkHelper.getData();
     return weatherData;
   }
+
+  String getWeatherId(int id) {
+    if (id == 800) {
+      return '快晴';
+    } else if (id >= 801) {
+      return '晴れ';
+    } else if (id >= 803) {
+      return '曇り';
+    } else if (id >= 600) {
+      return '雪';
+    } else if (id >= 500) {
+      return '雨';
+    } else if (id >= 503) {
+      return '大雨';
+    } else if (id >= 300) {
+      return '霧雨';
+    } else if (id >= 200) {
+      return '雷雨';
+    } else {
+      return 'error';
+    }
+  }
 }
