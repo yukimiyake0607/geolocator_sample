@@ -60,4 +60,26 @@ class WeatherModel {
       return WeatherIcons.alien;
     }
   }
+
+  String getWindDirection(int direction) {
+    if (direction == 0) {
+      return '北';
+    } else if (direction == 90) {
+      return '東';
+    } else if (direction == 180) {
+      return '南';
+    } else if (direction == 270) {
+      return '西';
+    } else if (0 < direction) {
+      return '北東';
+    } else if (90 < direction) {
+      return '南東';
+    } else if (180 < direction) {
+      return '南西';
+    } else if (270 < direction) {
+      return '北西';
+    } else {
+      return '不明';
+    }
+  }
 }
