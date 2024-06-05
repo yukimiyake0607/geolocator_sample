@@ -30,12 +30,17 @@ class _FirstPageState extends State<FirstPage> {
     if (weatherData == null) {
       cityName = 'ERROR';
       temperture = 0;
+      highTemperture = 0;
+      lowTemperture = 0;
+      weatherName = '取得できませんでした';
       return;
     }
+    WeatherModel weather = WeatherModel();
     cityName = weatherData['name'];
     temperture = weatherData['main']['temp'];
     highTemperture = weatherData['main']['temp_max'];
     lowTemperture = weatherData['main']['temp_min'];
+    weatherName = weather.getWeatherId(weatherData['weather'][0]['id']);
   }
 
   @override
