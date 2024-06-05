@@ -18,6 +18,7 @@ class _FirstPageState extends State<FirstPage> {
   double highTemperture = 0;
   double lowTemperture = 0;
   String weatherName = '';
+  IconData weatherIcon = WeatherIcons.day_sunny;
 
   @override
   void initState() {
@@ -33,6 +34,7 @@ class _FirstPageState extends State<FirstPage> {
       highTemperture = 0;
       lowTemperture = 0;
       weatherName = '取得できませんでした';
+      weatherIcon = WeatherIcons.alien;
       return;
     }
     WeatherModel weather = WeatherModel();
