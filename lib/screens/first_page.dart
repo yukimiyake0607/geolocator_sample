@@ -89,6 +89,9 @@ class _FirstPageState extends State<FirstPage> {
                                         fontSize: 18,
                                         fontWeight: FontWeight.bold),
                                   ),
+                                  const SizedBox(
+                                    height: 10,
+                                  ),
                                   Padding(
                                     padding: EdgeInsets.all(16.0),
                                     child: Icon(
