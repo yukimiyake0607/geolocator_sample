@@ -73,7 +73,7 @@ class _FirstPageState extends State<FirstPage> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const Expanded(
+                      Expanded(
                         child: Column(
                           children: [
                             Padding(
@@ -81,12 +81,12 @@ class _FirstPageState extends State<FirstPage> {
                               child: Column(
                                 children: [
                                   Text(
-                                    '快晴',
-                                    style: TextStyle(
+                                    weatherName,
+                                    style: const TextStyle(
                                         fontSize: 18,
                                         fontWeight: FontWeight.bold),
                                   ),
-                                  Padding(
+                                  const Padding(
                                     padding: EdgeInsets.all(16.0),
                                     child: Icon(
                                       WeatherIcons.day_sunny,
@@ -94,7 +94,7 @@ class _FirstPageState extends State<FirstPage> {
                                       color: Colors.yellow,
                                     ),
                                   ),
-                                  Row(
+                                  const Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       CurrentTime(),
