@@ -43,6 +43,7 @@ class _FirstPageState extends State<FirstPage> {
     highTemperture = weatherData['main']['temp_max'];
     lowTemperture = weatherData['main']['temp_min'];
     weatherName = weather.getWeatherId(weatherData['weather'][0]['id']);
+    weatherIcon = weather.getWeatherIcon(weatherData['weather'][0]['id']);
   }
 
   @override
