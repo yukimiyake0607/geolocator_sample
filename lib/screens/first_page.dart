@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:geolocator_sample/services/weather.dart';
 import 'package:weather_icons/weather_icons.dart';
@@ -22,6 +24,7 @@ class _FirstPageState extends State<FirstPage> {
   int humidity = 0;
   double sensibleTemperture = 0;
   double windSpeed = 0;
+  String windDirection = '';
 
   @override
   void initState() {
@@ -41,6 +44,7 @@ class _FirstPageState extends State<FirstPage> {
       humidity = 0;
       sensibleTemperture = 0;
       windSpeed = 0;
+      windDirection = '不明';
       return;
     }
     WeatherModel weather = WeatherModel();
@@ -53,6 +57,7 @@ class _FirstPageState extends State<FirstPage> {
     humidity = weatherData['main']['humidity'];
     sensibleTemperture = weatherData['main']['feels_like'];
     windSpeed = weatherData['wind']['speed'];
+    windDirection = weather.getWindDirection(weatherData['wind']['deg']);
   }
 
   @override
@@ -171,6 +176,7 @@ class _FirstPageState extends State<FirstPage> {
                             parameter: 'm/s'),
                         BuildWeatherInfo(
                           title: '風向き',
+                          value: windDirection,
                         ),
                         BuildWeatherInfo(
                           title: '日の出',
