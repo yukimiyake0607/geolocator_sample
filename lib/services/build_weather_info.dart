@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class BuildWeatherInfo extends StatefulWidget {
   String? title;
-  int? value;
+  final value;
   String? description;
   String? parameter;
 
