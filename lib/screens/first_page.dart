@@ -193,7 +193,7 @@ class _FirstPageState extends State<FirstPage> {
                         ),
                         BuildWeatherInfo(
                           title: '日の出',
-                          value: localSunriseTime,
+                          value: localSunsetTime,
                           parameter: '時',
                         ),
                         BuildWeatherInfo(
