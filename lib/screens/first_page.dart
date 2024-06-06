@@ -29,6 +29,7 @@ class _FirstPageState extends State<FirstPage> {
   String localSunriseTime = '';
   String humidityText = '';
   String sensibleTempertureText = '';
+  String windSpeedText = '';
 
   @override
   void initState() {
@@ -60,6 +61,7 @@ class _FirstPageState extends State<FirstPage> {
       localSunriseTime = '不明';
       humidityText = '不明';
       sensibleTempertureText = '不明';
+      windSpeedText = '不明';
       return;
     }
     cityName = weatherData['name'];
@@ -78,6 +80,7 @@ class _FirstPageState extends State<FirstPage> {
     humidityText = weather.humidityText(humidity);
     sensibleTempertureText =
         weather.sensitibleTempertureText(sensibleTemperture);
+    windSpeedText = weather.windSpeedText(windSpeed);
   }
 
   @override
@@ -192,7 +195,7 @@ class _FirstPageState extends State<FirstPage> {
                         BuildWeatherInfo(
                             title: '風速',
                             value: windSpeed.toInt(),
-                            description: '時折少し強い風が吹きます',
+                            description: windSpeedText,
                             parameter: 'm/s'),
                         BuildWeatherInfo(
                           title: '風向き',
