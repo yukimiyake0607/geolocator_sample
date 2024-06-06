@@ -27,6 +27,7 @@ class _FirstPageState extends State<FirstPage> {
   String windDirection = '';
   String localSunsetTime = '';
   String localSunriseTime = '';
+  String humidityText = '';
 
   @override
   void initState() {
@@ -56,6 +57,7 @@ class _FirstPageState extends State<FirstPage> {
       windDirection = '不明';
       localSunsetTime = '不明';
       localSunriseTime = '不明';
+      humidityText = '不明';
       return;
     }
     cityName = weatherData['name'];
@@ -71,6 +73,7 @@ class _FirstPageState extends State<FirstPage> {
     localSunsetTime =
         weather.formatLocalTimeFromUTC(utcSunsetTime); // すでにクラス内で宣言された変数を更新する
     localSunriseTime = weather.formatLocalTimeFromUTC(utcSunriseTime);
+    humidityText = weather.humidityText(humidity);
   }
 
   @override
@@ -175,7 +178,7 @@ class _FirstPageState extends State<FirstPage> {
                         BuildWeatherInfo(
                             title: '湿度',
                             value: humidity,
-                            description: '湿度は高めです',
+                            description: humidityText,
                             parameter: '%'),
                         BuildWeatherInfo(
                             title: '体感温度',
