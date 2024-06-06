@@ -102,4 +102,22 @@ class WeatherModel {
       return '湿度低めです。感染症を起こすリスクが高くなります。';
     }
   }
+
+  String sensitibleTempertureText(double sensitibleTemperture) {
+    if (sensitibleTemperture >= 30) {
+      return '半袖で過ごせます';
+    } else if (sensitibleTemperture >= 25) {
+      return '半袖シャツで過ごせます';
+    } else if (sensitibleTemperture < 25) {
+      return '長袖シャツで過ごせます';
+    } else if (sensitibleTemperture < 20) {
+      return '薄手のカーディガンを持ち歩きましょう';
+    } else if (sensitibleTemperture < 15) {
+      return 'セーターで過ごせます';
+    } else if (sensitibleTemperture < 12) {
+      return 'トレンチコートを羽織りましょう';
+    } else {
+      return '冬用アウターを羽織りましょう';
+    }
+  }
 }
