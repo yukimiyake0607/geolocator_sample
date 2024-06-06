@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:geolocator_sample/services/current_location.dart';
 import 'package:geolocator_sample/services/network_helper.dart';
 import 'package:weather_icons/weather_icons.dart';
+import 'package:intl/intl.dart';
+
 
 String apiKey = 'faca477592cf21c0f3627e68fc1fd1b0';
 
@@ -82,4 +84,14 @@ class WeatherModel {
       return '不明';
     }
   }
+
+  String formatLocalTimeFromUTC(int utcTimeString) {
+    DateTime utcDateTime =
+        DateTime.fromMillisecondsSinceEpoch(utcTimeString * 1000)
+            .toLocal(); // UTCからDateTimeオブジェクトに変換し、ローカル時刻に変換する
+    String formattedTime =
+        DateFormat.Hm().format(utcDateTime); // ○時○分形式にフォーマットする
+    return formattedTime; // フォーマットされた時刻を返す
+  }
+
 }
