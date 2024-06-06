@@ -25,6 +25,8 @@ class _FirstPageState extends State<FirstPage> {
   double sensibleTemperture = 0;
   double windSpeed = 0;
   String windDirection = '';
+  String localSunsetTime = '';
+  String localSunriseTime = '';
 
   @override
   void initState() {
@@ -34,6 +36,13 @@ class _FirstPageState extends State<FirstPage> {
   }
 
   void updateUI(dynamic weatherData) {
+    WeatherModel weather = WeatherModel();
+
+    //日の出時間を出力
+    final utcSunsetTime = weatherData['sys']['sunset'];
+
+    //日の入時間を出力
+    final utcSunriseTime = weatherData['sys']['sunrise'];
     if (weatherData == null) {
       cityName = 'ERROR';
       temperture = 0;
@@ -45,9 +54,10 @@ class _FirstPageState extends State<FirstPage> {
       sensibleTemperture = 0;
       windSpeed = 0;
       windDirection = '不明';
+      localSunsetTime = '不明';
+      localSunriseTime = '不明';
       return;
     }
-    WeatherModel weather = WeatherModel();
     cityName = weatherData['name'];
     temperture = weatherData['main']['temp'];
     highTemperture = weatherData['main']['temp_max'];
@@ -58,6 +68,9 @@ class _FirstPageState extends State<FirstPage> {
     sensibleTemperture = weatherData['main']['feels_like'];
     windSpeed = weatherData['wind']['speed'];
     windDirection = weather.getWindDirection(weatherData['wind']['deg']);
+    localSunsetTime =
+        weather.formatLocalTimeFromUTC(utcSunsetTime); // すでにクラス内で宣言された変数を更新する
+    localSunriseTime = weather.formatLocalTimeFromUTC(utcSunriseTime);
   }
 
   @override
@@ -180,12 +193,12 @@ class _FirstPageState extends State<FirstPage> {
                         ),
                         BuildWeatherInfo(
                           title: '日の出',
-                          value: 6,
+                          value: localSunriseTime,
                           parameter: '時',
                         ),
                         BuildWeatherInfo(
                           title: '日の入',
-                          value: 17,
+                          value: localSunsetTime,
                           parameter: '時',
                         ),
                       ],
