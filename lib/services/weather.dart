@@ -122,13 +122,13 @@ class WeatherModel {
   }
 
   String windSpeedText(double windSpeed) {
-    if (windSpeed < 10) {
-      return '';
-    } else if (windSpeed < 15) {
+    if (windSpeed < 10.0) {
+      return '適正風速です。';
+    } else if (windSpeed < 15.0) {
       return 'やや強い風が吹きます。';
-    } else if (windSpeed < 20) {
+    } else if (windSpeed < 20.0) {
       return '強い風が吹きます。';
-    } else if (windSpeed < 30) {
+    } else if (windSpeed < 30.0) {
       return '非常に強い風が吹きます。屋内へ避難しましょう。';
     } else {
       return '猛烈に強い風が吹きます。外出を控えましょう。';
