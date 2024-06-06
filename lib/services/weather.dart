@@ -120,4 +120,18 @@ class WeatherModel {
       return '冬用アウターを羽織りましょう。';
     }
   }
+
+  String windSpeedText(double windSpeed) {
+    if (windSpeed < 10) {
+      return '';
+    } else if (windSpeed < 15) {
+      return 'やや強い風が吹きます。';
+    } else if (windSpeed < 20) {
+      return '強い風が吹きます。';
+    } else if (windSpeed < 30) {
+      return '非常に強い風が吹きます。屋内へ避難しましょう。';
+    } else {
+      return '猛烈に強い風が吹きます。外出を控えましょう。';
+    }
+  }
 }
