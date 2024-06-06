@@ -4,7 +4,6 @@ import 'package:geolocator_sample/services/network_helper.dart';
 import 'package:weather_icons/weather_icons.dart';
 import 'package:intl/intl.dart';
 
-
 String apiKey = 'faca477592cf21c0f3627e68fc1fd1b0';
 
 class WeatherModel {
@@ -94,4 +93,13 @@ class WeatherModel {
     return formattedTime; // フォーマットされた時刻を返す
   }
 
+  String humidityText(int humidity) {
+    if (humidity > 60) {
+      return '湿度高めです。こまめに換気しましょう。';
+    } else if (humidity > 40) {
+      return '適正な湿度です。';
+    } else {
+      return '湿度低めです。感染症を起こすリスクが高くなります。';
+    }
+  }
 }
